@@ -1,0 +1,30 @@
+{
+  "name": "pokezira",
+  "version": "0.0.1",
+  "description": "A browser pokemon game developed by artrix and his team",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "save": "tsc -p ."
+  },
+  "author": "Artrix",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "firebase-admin": "^9.0.0",
+    "moment": "^2.27.0",
+    "request": "^2.88.2",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.0.23",
+    "@types/ws": "^7.2.6",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
