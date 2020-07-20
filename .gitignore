@@ -13,7 +13,7 @@
 /node_modules
 
 # The gitignore itself
-.gitignore
+/.gitignore
 
 # secrets
 *.secret
