@@ -29,7 +29,7 @@ const logs = (req:Request, res:Response, next:NextFunction) => {
     console.log(`A ${colors.red(req.method)} request was made at ${url} and got ${code} status code at ${colors.yellow(moment().format())}`);
     next();
 };
-
+cli.engine('sqrl', require('squirrelly').renderFile)
 // Init the middleware
 cli.use(logs);
 cli.use(require('express-session')({
@@ -45,13 +45,17 @@ wss.on('connection', (ws: WebSocket) => {
     console.log('A client has connected')
 });
 // Routes
-cli.get('/', (req:Request, res:Response) => res.send(`<b>HEYO</b>`));
+cli.get('/', (req:Request, res:Response) => {
+    res.render('')
+});
 
 cli.get('/test', (req:Request, res:Response) => {
     console.log(req.cookies());
 });
 
 cli.get('/pokebase.json', (req:Request, res:Response) => res.json(pokebase));
+
+
 // Run
 server.listen(port, () => {
     console.log(colors.green(`\n\n\nUp and running at ${colors.blue(startTime)} on port ${colors.blue(""+port)}`))
