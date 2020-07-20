@@ -24,7 +24,9 @@ const cli:Application    = express(),
 // Middleware
 const logs = (req:Request, res:Response, next:NextFunction) => {
     const url: string = colors.blue(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
-    console.log(`${colors.red(req.method)} Request on ${url} at ${colors.yellow(moment().format())}`);
+    let code:string
+    if (req.statusCode === 200) {code = colors.green(""+req.statusCode)} else {code = colors.red(""+req.statusCode)} 
+    console.log(`A ${colors.red(req.method)} request was made at ${url} and got ${code} status code at ${colors.yellow(moment().format())}`);
     next();
 };
 
