@@ -46,7 +46,7 @@ wss.on('connection', (ws: WebSocket) => {
 });
 // Routes
 cli.get('/', (req:Request, res:Response) => {
-    res.render('')
+    res.render('index')
 });
 
 cli.get('/test', (req:Request, res:Response) => {
