@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "save": "tsc -p .",
-    "push": "git commit . && git push -u origin master"
+    "push": "tsc -p . && git commit . && git push -u origin master"
   },
   "author": "Artrix",
   "license": "ISC",
