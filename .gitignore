@@ -1,0 +1,20 @@
+# Typescript compiled files
+/dist
+
+
+# All vs code files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# NPM modules
+/node_modules
+
+# The gitignore itself
+.gitignore
+
+# secrets
+*.secret
+/src/secrets/*
