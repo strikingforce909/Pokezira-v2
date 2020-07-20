@@ -17,6 +17,7 @@ import express, {
 const cli:Application    = express(),
       server: Server     = http.createServer(cli),
       wss                = new Websocket.Server({ server }),
+      pokebase: object   = require('../json/pokebase.json'),
       startTime:string   = moment().format(),
       port:number|string = process.env.PORT||5000;
 
@@ -48,6 +49,7 @@ cli.get('/test', (req:Request, res:Response) => {
     console.log(req.cookies());
 });
 
+cli.get('/pokebase.json', (req:Request, res:Response) => res.json(pokebase));
 // Run
 server.listen(port, () => {
     console.log(colors.green(`\n\n\nUp and running at ${colors.blue(startTime)} on port ${colors.blue(""+port)}`))
